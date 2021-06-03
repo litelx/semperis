@@ -1,0 +1,52 @@
+select, input {
+    margin-right: 24px;
+    max-width: 120px;
+    width: 120px;
+    height: 24px;
+}
+
+label {
+    margin-right: 5px;
+    color: rgb(66, 82, 110);
+}
+
+.field-item {
+    border: solid grey 1px;
+    border-radius: 5px;
+    padding: 10px 12px;
+    margin: 4px 20px;
+    width: max-content;
+    background-color: rgb(235, 236, 240);
+}
+
+button {
+    min-width: 25px;
+}
+
+@media screen and (max-width: 700px) {
+    select, input {
+        margin-right: 24px;
+        margin-bottom: 5px;
+        max-width: 120px;
+    }
+    
+    label {
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    
+    .field-item {
+        border: solid grey 1px;
+        border-radius: 5px;
+        padding: 10px 12px;
+        margin: 4px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin-top: 6px;
+        max-width: 120px;
+        height: 24px;
+    }
+}

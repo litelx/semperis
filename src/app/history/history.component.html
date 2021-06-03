@@ -1,0 +1,11 @@
+<div class="main-history">
+    <p>History Of Queries:</p>
+    <div *ngFor="let y of queries">
+        <div *ngFor="let u of y">
+            {{u.field}}
+            {{u.operation}}
+            {{u.value}}
+        </div>
+    </div>
+</div>
+

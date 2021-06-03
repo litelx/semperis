@@ -1,0 +1,13 @@
+<form action="">
+    <div class="field-item" *ngFor="let query of queries; let i=index">
+        <field-item
+            [queryItems]="query" 
+            (chosenField)="chosen($event, i)" 
+            (removedField)="remove(i)">
+        </field-item>
+    </div>
+    <div class="buttons">
+        <button [disabled]="!hasPossibleFields" (click)="addNewField()">+ Add Criteria</button>
+        <button (click)="saveQuery()">Save Query</button>
+    </div>
+</form>

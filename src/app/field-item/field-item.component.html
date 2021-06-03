@@ -1,0 +1,34 @@
+<div class="field-item">
+    <label>Field: </label>
+    <select (change)="chosen()" [(ngModel)]="query.field">
+        <ng-container *ngFor="let dropdownItem of items">
+            <option
+                *ngIf="queryItems[dropdownItem].isVisible() && (!queryItems[dropdownItem].isExist() || query.field === dropdownItem)"
+                [value]="dropdownItem">
+                {{dropdownItem}}
+            </option>
+        </ng-container>
+    </select>
+    <label>operation: </label>
+    <select (change)="chosen()" [(ngModel)]="query.operation">
+        <ng-container *ngIf="query.field">
+            <option *ngFor="let chosenDropdwnItem of queryItems[query.field].operation"
+                [value]="chosenDropdwnItem">{{chosenDropdwnItem}}</option>
+        </ng-container>
+    </select>
+    <label>value: </label>
+
+    <ng-container *ngIf="query.field === field.ID; else name">
+        <input type="number" (change)="chosen()" [(ngModel)]="query.value">
+    </ng-container>
+    <ng-template #name>
+        <select (change)="chosen()" [(ngModel)]="query.value">
+            <ng-container *ngIf="query.field">
+                <option *ngFor="let chosenDropdwnItem of queryItems[query.field].values"
+                    [value]="chosenDropdwnItem">{{chosenDropdwnItem}}</option>
+            </ng-container>
+        </select>
+    </ng-template>
+
+    <button (click)="removeField()">X</button>
+</div>
