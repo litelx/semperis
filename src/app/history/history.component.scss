@@ -1,4 +1,21 @@
 .main-history {
     color: rgb(66, 82, 110);
+}
 
+p {
+    margin-left: 10px;
+}
+
+.queries {
+    padding: 20px;
+    border: solid grey 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    background-color: rgb(244, 245, 247);
+    color: rgb(66, 82, 110);
+}
+span {
+    margin: 0 10px;
 }

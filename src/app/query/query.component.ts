@@ -103,5 +103,8 @@ export class QueryComponent implements OnInit {
 
     saveQuery() {
         this.query.emit(this.chosenQueries);
+        this.chosenQueries = {};
+        this.queryList = {};
+        this.queries = [this.filterPossibleFields()];
     }
 }
